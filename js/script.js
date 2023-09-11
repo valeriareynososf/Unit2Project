@@ -18,13 +18,21 @@ Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
 
+const showPage = (list, page) => {
 
+const startIndex = ( page * 12)- page ;
+const endIndex = page * 12;
+
+}
 
 /*
 Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
 */
 
+const addPagination = () => {
+   
+}
 
 
 // Call functions
