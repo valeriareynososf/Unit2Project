@@ -14,8 +14,7 @@ For assistance:
 
 
 /*
-Create the `showPage` function
-This function will create and insert/append the elements needed to display a "page" of nine students
+The `showPage` function inserts/appends a list of user data
 */
 
 const showPage = (list, page) => {
@@ -42,15 +41,14 @@ const person = list[i];
 </li>
   `;
 
-//   studentList += htmlString;
 studentList.insertAdjacentHTML("beforeend", html)
 }
 }
+
 }
 
 /*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
+The `addPagination` function inserts/appends pagination buttons and calls the showPage function
 */
 
 const addPagination = (list ) => {
@@ -73,18 +71,16 @@ buttonList.insertAdjacentHTML("beforeend", html);
 buttonList.addEventListener("click", (e) => {
    const activeButton = buttonList.querySelector('.active')
    const buttonClicked = e.target.closest("button");
-   console.log("buttonClicked", buttonClicked)
+
    if (buttonClicked) {
       activeButton.classList.remove('active');
-      console.log("buttonClicked", buttonClicked)
       buttonClicked.classList.add('active');
-      showPage(list,  buttons)
+      showPage(list,  e.target.textContent)
    }
 })
 
 }
 
-console.log(data)
 // Call functions
 addPagination(data);
 showPage(data, 1)
